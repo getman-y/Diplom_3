@@ -11,3 +11,4 @@ class MainPageLocators:
     ORDER_SNIPPET = (By.XPATH, "//span[text()='Перетяните булочку сюда (низ)']")
     INGREDIENTS_COUNTER = (By.XPATH, '//ul[1]/a[1]//p[contains(@class, "num")]')
     CREATE_ORDER_BUTTON = By.XPATH, '//button[text()="Оформить заказ"]'
+    ORDER_ID = (By.XPATH, '//p[text()="идентификатор заказа"]')

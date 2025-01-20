@@ -1,3 +1,5 @@
+from random import Random
+
 import pytest
 from selenium import webdriver
 
@@ -6,3 +8,4 @@ def driver():
     driver = webdriver.Chrome()
     yield driver
     driver.quit()
+

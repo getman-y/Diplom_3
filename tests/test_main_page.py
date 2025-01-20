@@ -1,6 +1,7 @@
 from data import Urls
 from locators.main_page_locators import MainPageLocators
 from pages.main_page import MainPage
+from pages.register_page import RegisterPage
 
 
 class TestMainPage:
@@ -40,6 +41,14 @@ class TestMainPage:
         main_page.drag_and_drop(MainPageLocators.BUN_SNIPPET, MainPageLocators.ORDER_SNIPPET)
         counter_after_add = main_page.get_text_from_element(MainPageLocators.INGREDIENTS_COUNTER)
         assert counter_after_add > counter_before_add
+
+    def test_auth_user_create_order_success(self, driver):
+        reg_page = RegisterPage(driver)
+        reg_page.register_and_auth()
+        main_page = MainPage(driver)
+        main_page.click_to_element(MainPageLocators.CREATE_ORDER_BUTTON)
+        text = main_page.get_text_from_element(MainPageLocators.ORDER_ID)
+        assert text == 'идентификатор заказа'
 
 
 
