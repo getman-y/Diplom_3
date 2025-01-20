@@ -47,7 +47,7 @@ class TestMainPage:
         reg_page.register_and_auth()
         main_page = MainPage(driver)
         main_page.click_to_element(MainPageLocators.CREATE_ORDER_BUTTON)
-        text = main_page.get_text_from_element(MainPageLocators.ORDER_ID)
+        text = main_page.get_text_from_element(MainPageLocators.ORDER_ID_TEXT)
         assert text == 'идентификатор заказа'
 
 

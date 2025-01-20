@@ -1,4 +1,5 @@
 import time
+from selenium.webdriver.support import expected_conditions as EC
 
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions
@@ -37,3 +38,8 @@ class BasePage:
 
     def add_text_to_element(self, locator, text):
         self.find_element_with_wait(locator).send_keys(text)
+
+    def click_with_wait_clickable(self, locator):
+        button = self.find_element_with_wait(locator)
+        self.driver.execute_script("arguments[0].click();", button)
+

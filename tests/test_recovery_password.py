@@ -36,4 +36,5 @@ class TestRecoveryPassword:
         login_page.click_to_element(ForgotPasswordLocators.RECOVERY_PASSWORD_BUTTON)
         login_page.find_element_with_wait(ResetPasswordLocators.CODE_INPUT)
         login_page.click_to_element(ResetPasswordLocators.SHOW_PASSWORD_BUTTON)
-        login_page.find_element_with_wait(ResetPasswordLocators.INPUT_FOCUSED)
+        is_find_element = login_page.find_element_with_wait(ResetPasswordLocators.INPUT_FOCUSED)
+        assert is_find_element
