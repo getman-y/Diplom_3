@@ -12,3 +12,4 @@ class MainPageLocators:
     INGREDIENTS_COUNTER = (By.XPATH, '//ul[1]/a[1]//p[contains(@class, "num")]')
     CREATE_ORDER_BUTTON = By.XPATH, '//button[text()="Оформить заказ"]'
     ORDER_ID = (By.XPATH, '//p[text()="идентификатор заказа"]')
+    BUTTON_ACCOUNT = (By.XPATH, './/p[text()="Личный Кабинет"]')
