@@ -34,3 +34,6 @@ class BasePage:
         drag1 = self.find_element_with_wait(locator1)
         drag2 = self.find_element_with_wait(locator2)
         ActionChains(self.driver).drag_and_drop(drag1, drag2).perform()
+
+    def add_text_to_element(self, locator, text):
+        self.find_element_with_wait(locator).send_keys(text)

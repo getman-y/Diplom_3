@@ -8,6 +8,8 @@ class Urls:
     ACCOUNT_URL = f'{MAIN_URL}account/profile'
     HISTORY_OR_ORDER_URL = f'{MAIN_URL}account/order-history'
     LOGIN_URL = f'{MAIN_URL}login'
+    FORGOT_PASSWORD_URL = f'{MAIN_URL}forgot-password'
+    RESET_PASSWORD_URL = f'{MAIN_URL}reset-password'
 
 
 class UserData:

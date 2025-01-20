@@ -5,9 +5,9 @@ from pages.register_page import RegisterPage
 
 
 class AuthPage(BasePage):
-    def auth_user(self):
-        register = RegisterPage()
-        x = register.registration_user_and_return_data()
-        print (x)
+    def current_url(self):
+        return self.driver.current_url
+
+
 
 
