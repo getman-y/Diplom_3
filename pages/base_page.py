@@ -1,6 +1,3 @@
-import time
-from selenium.webdriver.support import expected_conditions as EC
-
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -15,9 +12,8 @@ class BasePage:
         self.driver.get(url)
 
     def click_to_element(self, locator):
-        WebDriverWait(self.driver, 5).until(
-            expected_conditions.element_to_be_clickable(locator))
-        self.driver.find_element(*locator).click()
+        button = self.find_element_with_wait(locator)
+        self.driver.execute_script("arguments[0].click();", button)
 
     def current_url(self):
         return self.driver.current_url
@@ -38,8 +34,4 @@ class BasePage:
 
     def add_text_to_element(self, locator, text):
         self.find_element_with_wait(locator).send_keys(text)
-
-    def click_with_wait_clickable(self, locator):
-        button = self.find_element_with_wait(locator)
-        self.driver.execute_script("arguments[0].click();", button)
 

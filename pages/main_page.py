@@ -1,4 +1,5 @@
 from data import Urls
+from locators.account_locators import AccountLocators
 from locators.main_page_locators import MainPageLocators
 from locators.order_page_locators import OrderPageLocators
 from pages.base_page import BasePage
@@ -16,6 +17,10 @@ class MainPage(BasePage):
         self.click_to_element(MainPageLocators.FEEDS_BUTTON)
         self.find_element_with_wait(OrderPageLocators.TOTAL_ORDER_COUNT)
 
+    def go_to_account(self):
+        self.click_to_element(MainPageLocators.BUTTON_ACCOUNT)
+        self.find_element_with_wait(AccountLocators.BUTTON_PROFILE)
+
     def click_on_ingredients(self):
         self.go_to_url(Urls.MAIN_URL)
         self.click_to_element(MainPageLocators.INGREDIENTS_SNIPPET)
@@ -26,7 +31,7 @@ class MainPage(BasePage):
         return text
 
     def close_modal(self):
-        self.click_with_wait_clickable(MainPageLocators.CLOSE_MODAL_WIH_DETAILS_INGREDIENTS)
+        self.click_to_element(MainPageLocators.CLOSE_MODAL_WIH_DETAILS_INGREDIENTS)
         text = self.get_text_from_element(MainPageLocators.TITLE_MAIN_PAGE)
         return text
 
@@ -54,4 +59,8 @@ class MainPage(BasePage):
         text = self.get_text_from_element(MainPageLocators.ORDER_ID_TEXT)
         return text
 
+    def create_order(self):
+        self.go_to_constructor()
+        self.drag_and_drop_ingredients()
+        self.click_button_create_order()
 
