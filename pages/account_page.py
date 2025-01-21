@@ -1,11 +1,13 @@
 from locators.account_locators import AccountLocators
 from locators.auth_locators import AuthLocators
 from locators.main_page_locators import MainPageLocators
+from locators.order_page_locators import OrderPageLocators
 from pages.base_page import BasePage
 
 
 class AccountPage(BasePage):
     def go_to_history_order(self):
+        self.find_element_with_wait(MainPageLocators.BUTTON_ACCOUNT)
         self.click_to_element(MainPageLocators.BUTTON_ACCOUNT)
         self.find_element_with_wait(AccountLocators.BUTTON_PROFILE)
         self.click_to_element(AccountLocators.HISTORY_OF_ORDER_BUTTON)

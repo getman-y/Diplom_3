@@ -41,6 +41,7 @@ class MainPage(BasePage):
         return counter
 
     def drag_and_drop_ingredients(self):
+        self.find_element_with_wait(MainPageLocators.ORDER_SNIPPET)
         self.drag_and_drop(MainPageLocators.INGREDIENTS_SNIPPET, MainPageLocators.ORDER_SNIPPET)
 
     def click_button_create_order(self):
@@ -52,7 +53,7 @@ class MainPage(BasePage):
         id = self.get_text_from_element(MainPageLocators.ORDER_ID)
         while id == '9999':
             id = self.get_text_from_element(MainPageLocators.ORDER_ID)
-        return f"0{id}"
+        return f"{id}"
 
     def return_order_id_text(self):
         self.find_element_with_wait(MainPageLocators.ORDER_ID_TEXT)

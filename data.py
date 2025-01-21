@@ -19,5 +19,5 @@ class UserData:
         random_number = str(random.randint(1000, 9999))
         email = f'getmanyuliia{random_number}@yandex.ru'
         password = '123456'
-        name = 'Юля'
-        return [email, password, name]
+        name = f'Юля{random_number}'
+        return [name, email, password]

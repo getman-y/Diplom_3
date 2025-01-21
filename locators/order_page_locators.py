@@ -6,6 +6,7 @@ class OrderPageLocators:
     COMPOUND_IN_MODAL_DETAIL = By.XPATH, '//p[text()="Cостав"]'
     ORDER_ID = (By.XPATH, '//p[@class="text text_type_digits-default"]')
     TOTAL_ORDER_COUNT = (By.XPATH, "//p[text()='Выполнено за все время:']/following-sibling::p")
-    ALL_ORDERS_AT_HISTORY = (By.XPATH, '//p[@class="text text_type_digits-default"]')
     DAILY_ORDER_COUNT = (By.XPATH, "//p[text()='Выполнено за сегодня:']/following-sibling::p")
-    NUMBER_IN_PROGRESS = (By.XPATH, '//ul[2]/li[1][@class="text text_type_digits-default mb-2"]')
+    ORDER_ID_IN_PROGRESS = (By.XPATH, '//li[text()="{order_id}"]')
+    ORDER_ID_IN_FEEDS =   (By.XPATH, '//p[text()="{order_id}"]')
+
